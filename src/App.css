@@ -89,3 +89,13 @@ margin-left: 10px;
 button:hover {
 background-color: darkred;
 }
+
+.filter-buttons button.active {
+  background-color: #5cb85c;
+  color: white;
+  font-weight: bold;
+}
+
+.filter-buttons{
+    padding-bottom: 10px;
+}
