@@ -6,6 +6,7 @@ import './App.css'
 const App = () => {
   const { tasks, addTask, deleteTask, updateTask } = useContext(TaskContext);
   const [newTaskText, setNewTaskText] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleAddTask = () => {
     if (newTaskText.trim() !== "") {
@@ -15,7 +16,12 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${darkMode ? "dark-mode" : ""}`}>
+       <div className="theme-toggle">
+        <button onClick={() => setDarkMode(!darkMode)}>
+          Switch to {darkMode ? "Light" : "Dark"} Mode
+        </button>
+      </div>
       <h1>Task Manager</h1>
       <div>
         <input
