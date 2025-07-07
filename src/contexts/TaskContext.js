@@ -1,8 +1,9 @@
 import React, { createContext, useState } from "react";
+import { useLocalStorage } from "../localStorage/useLocalStorage"; 
 export const TaskContext = createContext();
 
 const TaskProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useLocalStorage("tasks", []);
 
   const addTask = (taskText) => {
     const newTask = { text: taskText, isCompleted: false };
